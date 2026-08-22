@@ -1,1 +1,3 @@
 # react-mini-apps
+
+this is a basic practice project...
