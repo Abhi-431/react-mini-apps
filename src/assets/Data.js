@@ -11,7 +11,7 @@ const blogs = [
     title: "Mastering useState Hook",
     description:
       "A deep dive into the useState hook with real-world examples and common mistakes.",
-      path:'/counter'
+      path:'/list'
   },
   {
     id: 3,
