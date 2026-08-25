@@ -8,16 +8,16 @@ const blogs = [
   },
   {
     id: 2,
-    title: "Mastering useState Hook",
+    title: "This is a list ",
     description:
-      "A deep dive into the useState hook with real-world examples and common mistakes.",
+      "In this list you can add any element that in search bar search for it.", 
       path:'/list'
   },
   {
     id: 3,
-    title: "Props vs State in React",
+    title: "Mode Changer",
     description:
-      "Understand the difference between props and state and when to use each.",
+      "Toggle between dark and light mode and see chnage in the color of screen  .",
       path:'/mode'
   },
   {
