@@ -18,7 +18,7 @@ const blogs = [
     title: "Props vs State in React",
     description:
       "Understand the difference between props and state and when to use each.",
-      path:'/counter'
+      path:'/mode'
   },
   {
     id: 4,

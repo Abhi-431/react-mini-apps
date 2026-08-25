@@ -7,6 +7,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Home from "./Pages/Home.jsx"
 import Counter from './componants/Counter.jsx'
 import SearchList from './Pages/SearchList.jsx'
+import ModeChange from './Pages/ModeChange.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/counter' element={<Counter/>}/>
       <Route path='/list' element={<SearchList/>}/>
+      <Route path='/mode' element={<ModeChange/>}/>
     </Routes>
     
   )
