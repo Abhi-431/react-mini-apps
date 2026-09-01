@@ -8,6 +8,7 @@ import Home from "./Pages/Home.jsx"
 import Counter from './componants/Counter.jsx'
 import SearchList from './Pages/SearchList.jsx'
 import ModeChange from './Pages/ModeChange.jsx'
+import TodoList from './Pages/TodoList.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/counter' element={<Counter/>}/>
       <Route path='/list' element={<SearchList/>}/>
       <Route path='/mode' element={<ModeChange/>}/>
+      <Route path='/todo' element={<TodoList/>}/>
     </Routes>
     
   )

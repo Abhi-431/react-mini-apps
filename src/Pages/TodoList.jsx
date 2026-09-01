@@ -1,0 +1,76 @@
+import React, { useState } from 'react'
+import Navbar from '../componants/Navbar'
+import TODO from '../componants/TODO'
+const TodoList = () => {
+    const [item,setItem]=useState('')
+    const [itemlist,setitemList]=useState([])
+
+    const [showCompleted, setShowCompleted] = useState(false)
+
+    const addTodo=(e)=>{
+        e.preventDefault();
+        if(item.trim()==='')return;
+        const newItem={
+            id:Date.now(),
+            text:item,
+            state:false
+        }
+        setitemList([...itemlist,newItem])
+
+        setItem('')
+        
+    }
+   const toggle = (id) => {
+  setitemList(itemlist.map((todo) =>
+    todo.id === id ? { ...todo, state: !todo.state } : todo
+  ))
+   }
+  const toggleShowCompleted = (e) => {
+    e.preventDefault()
+    setShowCompleted(!showCompleted)
+  }
+
+  const displayedTodos = showCompleted
+    ? itemlist.filter((val) => val.state === true)
+    : itemlist
+
+
+  return (
+    <div className='w-full h-screen relative pt-16 flex items-center justify-center'>
+      <Navbar className='sticky top-0 z-50'/>
+      <div className=' w-full h-4/5 m-4 flex rounded-2xl bg-amber-50 justify-center  border-4'>
+      <div className='w-11/12 border-2 bg-amber-900 border-gray-600 h-1/12'>
+      <form onSubmit={addTodo}>
+        <input className='bg-amber-50 p-1 w-sm m-1'
+          value={item}
+           placeholder='type TODO.....' 
+           type="text" 
+           onChange={(e)=>setItem(e.target.value)}/>
+        <button type='submit'>Add</button>
+         <button type='button' onClick={toggleShowCompleted}>
+              {showCompleted ? 'Show All' : 'Show Completed'}
+            </button>
+       <ul>
+        
+            {displayedTodos.map((val) => (
+                <TODO
+                  key={val.id}
+                  id={val.id}
+                  onToggle={toggle}
+                  text={val.text}
+                  state={val.state}/>
+            ))
+        }
+      </ul>
+      </form>
+       
+    </div>
+    
+    
+ 
+      </div>
+    </div>
+  )
+}
+
+export default TodoList

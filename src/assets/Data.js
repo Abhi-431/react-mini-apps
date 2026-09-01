@@ -25,7 +25,7 @@ const blogs = [
     title: "Building Reusable Components",
     description:
       "Learn how to design reusable and maintainable React components like professionals.",
-      path:'/counter'
+      path:'/todo'
   },
   {
     id: 5,
