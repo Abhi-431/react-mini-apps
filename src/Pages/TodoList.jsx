@@ -25,6 +25,8 @@ const TodoList = () => {
     todo.id === id ? { ...todo, state: !todo.state } : todo
   ))
    }
+
+
   const toggleShowCompleted = (e) => {
     e.preventDefault()
     setShowCompleted(!showCompleted)
@@ -36,21 +38,23 @@ const TodoList = () => {
 
 
   return (
-    <div className='w-full h-screen relative pt-16 flex items-center justify-center'>
+    <div className='w-full h-screen relative pt-16 flex items-center  justify-center'>
       <Navbar className='sticky top-0 z-50'/>
-      <div className=' w-full h-4/5 m-4 flex rounded-2xl bg-amber-50 justify-center  border-4'>
-      <div className='w-11/12 border-2 bg-amber-900 border-gray-600 h-1/12'>
-      <form onSubmit={addTodo}>
-        <input className='bg-amber-50 p-1 w-sm m-1'
+      <div className=' w-full h-4/5 m-4 p-2 flex rounded-2xl bg-amber-50 justify-center  border-4'>
+      <div className='w-11/12  border-2 justify-between bg-amber-900 border-gray-600 h-1/12'>
+      <form className='flex justify-between' onSubmit={addTodo}>
+        <input className='overflow-hidden rounded-2xl bg-amber-50 p-1 w-sm m-1'
           value={item}
            placeholder='type TODO.....' 
            type="text" 
            onChange={(e)=>setItem(e.target.value)}/>
-        <button type='submit'>Add</button>
-         <button type='button' onClick={toggleShowCompleted}>
+        <button className='border w-32 rounded-2xl bg-amber-50 m-1'type='submit'>Add</button>
+         <button  className='border rounded-2xl bg-amber-50 w-32 m-1' type='button' onClick={toggleShowCompleted}>
               {showCompleted ? 'Show All' : 'Show Completed'}
             </button>
-       <ul>
+       
+      </form>
+       <ul className='space-y-2 pt-2'>
         
             {displayedTodos.map((val) => (
                 <TODO
@@ -62,14 +66,9 @@ const TodoList = () => {
             ))
         }
       </ul>
-      </form>
-       
     </div>
-    
-    
- 
-      </div>
-    </div>
+  </div>
+</div>
   )
 }
 
