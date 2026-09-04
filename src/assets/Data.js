@@ -32,7 +32,7 @@ const blogs = [
     title: "Styling React with Tailwind CSS",
     description:
       "A beginner-friendly guide to styling React applications using Tailwind CSS.",
-      path:'/counter'
+      path:'/dropdown'
   },
 ];
 export  default blogs
